@@ -4,4 +4,4 @@ dotenv.config();
 // ... client setup (keep reading)
 console.log(process.env.A);
 console.log(process.env.B);
-client.login(process.env.TOKEN);
+console.log(process.env.TOKEN);
