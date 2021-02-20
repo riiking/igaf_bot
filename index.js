@@ -1,5 +1,6 @@
 const dotenv = require('dotenv');
 const fs = require('fs');
+const Sequelize = require('sequelize');
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const {
