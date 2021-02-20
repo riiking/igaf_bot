@@ -21,6 +21,15 @@ for (const folder of commandFolders) {
 }
 
 client.once('ready', () => {
+
+  const sequelize = new Sequelize('database', 'user', 'password', {
+    host: 'localhost',
+    dialect: 'sqlite',
+    logging: false,
+    // SQLite only
+    storage: 'database.sqlite',
+  });
+
   console.log('Ready!');
 });
 client.login(process.env.TOKEN);
@@ -44,6 +53,13 @@ client.on('message', message => {
   if (command.guildOnly && message.channel.type === 'dm') {
     return message.reply('I can\'t execute that command inside DMs!');
   }
+  if (command.permissions) {
+    const authorPerms = message.channel.permissionsFor(message.author);
+    if (!authorPerms || !authorPerms.has(command.permissions)) {
+      return message.reply('You can not do this!');
+    }
+  }
+
   if (command.args && !args.length) {
     let reply = `You didn't provide any arguments, ${message.author}!`;
 
