@@ -1,6 +1,6 @@
 const dotenv = require('dotenv');
 const fs = require('fs');
-const Sequelize = require('sequelize');
+const Tags = require('db/tags');
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const {
@@ -21,27 +21,7 @@ for (const folder of commandFolders) {
   }
 }
 
-const sequelize = new Sequelize('database', 'user', 'password', {
-  host: 'localhost',
-  dialect: 'sqlite',
-  logging: false,
-  // SQLite only
-  storage: 'database.sqlite',
-});
 
-const Tags = sequelize.define('tags', {
-  name: {
-    type: Sequelize.STRING,
-    unique: true,
-  },
-  description: Sequelize.TEXT,
-  username: Sequelize.STRING,
-  usage_count: {
-    type: Sequelize.INTEGER,
-    defaultValue: 0,
-    allowNull: false,
-  },
-});
 
 client.once('ready', () => {
   Tags.sync();

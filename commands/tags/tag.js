@@ -1,5 +1,9 @@
+const Tags = require('db/tags');
+
 async function execute(message, args) {
-    const tagName = commandArgs;
+
+  const tagName = args.shift();
+
 
     // equivalent to: SELECT * FROM tags WHERE name = 'tagName' LIMIT 1;
     const tag = await Tags.findOne({

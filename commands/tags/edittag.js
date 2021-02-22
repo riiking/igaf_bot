@@ -1,7 +1,9 @@
+const Tags = require('db/tags');
+
 async function execute(message, args) {
-  const splitArgs = commandArgs.split(' ');
-  const tagName = splitArgs.shift();
-  const tagDescription = splitArgs.join(' ');
+  const splitArgs = args;
+  const tagName = args.shift();
+  const tagDescription = args.join(' ');
 
   // equivalent to: UPDATE tags (description) values (?) WHERE name='?';
   const affectedRows = await Tags.update({

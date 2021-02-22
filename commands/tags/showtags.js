@@ -1,3 +1,5 @@
+const Tags = require('db/tags');
+
 async function execute(message, args) {
   const tagList = await Tags.findAll({
     attributes: ['name']

@@ -1,5 +1,9 @@
+const Tags = require('db/tags');
+
 async function execute(message, args) {
-  const tagName = commandArgs;
+
+  const tagName = args.shift();
+
   // equivalent to: DELETE from tags WHERE name = ?;
   const rowCount = await Tags.destroy({
     where: {
