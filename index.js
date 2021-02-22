@@ -1,6 +1,6 @@
 const dotenv = require('dotenv');
 const fs = require('fs');
-const Tags = require('db/tags');
+const Tags = require('/db/tags');
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const {
