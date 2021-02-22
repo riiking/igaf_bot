@@ -3,7 +3,7 @@ module.exports = {
   description: 'add tag',
   cooldown: 5,
   aliases: ['newtag'],
-  execute(message, args) {
+  async execute(message, args) {
     const splitArgs = commandArgs.split(' ');
     const tagName = splitArgs.shift();
     const tagDescription = splitArgs.join(' ');

@@ -2,7 +2,7 @@ module.exports = {
   name: 'edittag',
   description: 'edit tag',
   cooldown: 5,
-  execute(message, args) {
+  async execute(message, args) {
     const splitArgs = commandArgs.split(' ');
     const tagName = splitArgs.shift();
     const tagDescription = splitArgs.join(' ');

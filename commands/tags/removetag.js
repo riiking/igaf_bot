@@ -3,7 +3,7 @@ module.exports = {
   description: 'remove tags',
   cooldown: 5,
   alsiases: ['deletetag'],
-  execute(message, args) {
+  async execute(message, args) {
     const tagName = commandArgs;
     // equivalent to: DELETE from tags WHERE name = ?;
     const rowCount = await Tags.destroy({

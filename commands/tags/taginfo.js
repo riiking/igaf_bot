@@ -2,7 +2,7 @@ module.exports = {
   name: 'taginfo',
   description: 'tag info',
   cooldown: 5,
-  execute(message, args) {
+  async execute(message, args) {
     const tagName = commandArgs;
 
     // equivalent to: SELECT * FROM tags WHERE name = 'tagName' LIMIT 1;
