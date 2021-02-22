@@ -1,5 +1,4 @@
-const Tags = require('./db/tags');
-
+const Tags = require('./db/tags.js');
 async function execute(message, args) {
   const splitArgs = args;
   const tagName = args.shift();
