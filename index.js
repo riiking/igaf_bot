@@ -21,18 +21,30 @@ for (const folder of commandFolders) {
   }
 }
 
-client.once('ready', () => {
+const sequelize = new Sequelize('database', 'user', 'password', {
+  host: 'localhost',
+  dialect: 'sqlite',
+  logging: false,
+  // SQLite only
+  storage: 'database.sqlite',
+});
 
-  const sequelize = new Sequelize('database', 'user', 'password', {
-    host: 'localhost',
-    dialect: 'sqlite',
-    logging: false,
-    // SQLite only
-    storage: 'database.sqlite',
-  });
+const sequelize = new Sequelize('database', 'user', 'password', {
+host: 'localhost',
+dialect: 'sqlite',
+logging: false,
+// SQLite only
+storage: 'database.sqlite',
+});
+
+client.once('ready', () => {
+  Tags.sync();
+
 
   console.log('Ready!');
 });
+
+
 client.login(process.env.TOKEN);
 
 for (const file of commandFiles) {
