@@ -17,5 +17,5 @@ module.exports = {
   name: 'taginfo',
   description: 'tag info',
   cooldown: 5,
-  execute;
+  execute
 }
