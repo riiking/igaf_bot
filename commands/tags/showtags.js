@@ -4,7 +4,7 @@ async function execute(message, args) {
   });
   const tagString = tagList.map(t => t.name).join(', ') || 'No tags set.';
   return message.channel.send(`List of tags: ${tagString}`);
-};
+}
 
 module.exports = {
   name: 'showtags',

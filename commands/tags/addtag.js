@@ -17,7 +17,7 @@ async function execute(message, args) {
     }
     return message.reply('Something went wrong with adding a tag.');
   }
-};
+}
 
 
 module.exports = {

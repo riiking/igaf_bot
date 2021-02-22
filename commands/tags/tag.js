@@ -13,7 +13,7 @@ async function execute(message, args) {
       return message.channel.send(tag.get('description'));
     }
     return message.reply(`Could not find tag: ${tagName}`);
-  },
+  }
 
   module.exports = {
     name: 'tag',

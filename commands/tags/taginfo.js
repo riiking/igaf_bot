@@ -11,7 +11,7 @@ async function execute(message, args) {
     return message.channel.send(`${tagName} was created by ${tag.username} at ${tag.createdAt} and has been used ${tag.usage_count} times.`);
   }
   return message.reply(`Could not find tag: ${tagName}`);
-};
+}
 
 module.exports = {
   name: 'taginfo',

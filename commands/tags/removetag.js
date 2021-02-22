@@ -10,7 +10,7 @@ async function execute(message, args) {
 
   return message.reply('Tag deleted.');
   message.channel.send(`List of tags: ${tagString}`);
-};
+}
 
 module.exports = {
   name: 'removetags',

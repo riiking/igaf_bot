@@ -15,7 +15,7 @@ async function execute(message, args) {
     return message.reply(`Tag ${tagName} was edited.`);
   }
   return message.reply(`Could not find a tag with name ${tagName}.`);
-};
+}
 
 module.exports = {
   name: 'edittag',
