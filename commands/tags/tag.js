@@ -1,4 +1,4 @@
-const Tags = require('./db/tags.js');
+const Tags = require('../db/tags.js');
 
 async function execute(message, args) {
 
