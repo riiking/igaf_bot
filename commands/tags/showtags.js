@@ -2,7 +2,7 @@ module.exports = {
   name: 'showtags',
   description: 'show tags',
   cooldown: 5,
-  async execute(message, args) {
+  execute(message, args) {
     const tagList = await Tags.findAll({
       attributes: ['name']
     });
